@@ -15,9 +15,8 @@ if __name__ == '__main__':
         x = 0
         count = 0
         for y in range(0,len(i),slope[1]):
-            c=i[y]
             if i[y][x] == '#':
                 count+=1
-            x = (x+slope[0])%31
+            x = (x+slope[0])%len(i[0])
         tree_counts.append(count)
     print(math.prod(tree_counts))
