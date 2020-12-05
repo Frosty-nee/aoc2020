@@ -47,7 +47,7 @@ def validate(k, v):
         else:
             return False
     elif k == 'hcl':
-        allowed_chars = string.digits+string.ascii_lowercase[:6]
+        allowed_chars = string.hexdigits
         valid = True
         if v[0] == '#' and v[1:].isalnum() and len(v) == 7:
             for c in v[1:]:
@@ -64,6 +64,8 @@ def validate(k, v):
         return len(v) == 9 and v.isnumeric()
     elif k == 'cid':
         return True
+    else:
+        return False
 
 if __name__ == '__main__':
     passports = process_input('i4')
