@@ -9,7 +9,7 @@ def process_input(i):
     return [(find_row_or_column(e[:7]), find_row_or_column(e.strip()[7:])) for e in reversed(i)]
 
 def find_row_or_column(i):
-    r = list(range(2**len(i)))
+    r = range(2**len(i))
     i = [True if b == 'F' or b == 'L' else False for b in i]
     for c in i:
         if c:

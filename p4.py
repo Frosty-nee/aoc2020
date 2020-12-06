@@ -5,16 +5,7 @@ import string
 from file_in import load
 
 def process_input(i):
-    i = load(i)
-    p = ''
-    for line in i:
-        if line != '\n':
-            p+=line.strip()+' '
-        else:
-            p= p.rstrip() + '\n'
-    p=p.rstrip()
-    p = p.split('\n')
-
+    p = preprocess(load(i))
     passports = []
     for passport in p:
         d = {}
@@ -24,6 +15,17 @@ def process_input(i):
             d[k] = v
         passports.append(d)
     return passports
+
+def preprocess(i):
+    p = ''
+    for line in i:
+        if line != '\n':
+            p+=line.strip()+' '
+        else:
+            p= p.rstrip() + '\n'
+    p=p.rstrip()
+    p = p.split('\n')
+    return p
 
 def validate(k, v):
     if k == 'byr':
