@@ -11,4 +11,4 @@ testinput = {
 
 p7.rule_list = testinput
 print(p7.count_contained_bags('dark purple bag'))
-assert p7.count_contained_bags('dark purple bag') == 12
+assert p7.count_contained_bags('dark purple bag')-1 == 12

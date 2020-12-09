@@ -2,6 +2,8 @@
 
 import math
 
+from datetime import datetime
+
 from file_in import load
 
 def process_input(i):
@@ -72,6 +74,8 @@ def count_contained_bags(i):
 if __name__ == '__main__':
     global rule_list
     rule_list = process_input(load('i7'))
-
+    start = datetime.utcnow()
     print(p1_count())
     print(count_contained_bags('shiny gold bag')-1)
+    finish = datetime.utcnow()
+    print(finish-start)
